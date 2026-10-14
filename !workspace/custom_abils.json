@@ -1,0 +1,641 @@
+{
+   "nightlight":{
+      "flags":{
+         
+      },
+      "name":"Night Light",
+      "shortDesc":"Damage from Ghost- and Dark-type moves against this Pokemon is halved."
+   },
+   "webtrap":{
+      "name":"Web Trap",
+      "shortDesc":"Contact with this Pokémon inflicts Webbed. (Webbed Pokemon cannot pivot out.)"
+   },
+   "kinglymajesty":{
+      "name":"Kingly Majesty",
+      "shortDesc":"When this Pokemon falls to 50%≤ of its max HP, its next move is first in its priority bracket."
+   },
+   "burnheal":{
+      "flags":{
+         
+      },
+      "name":"Burn Heal",
+      "shortDesc":"This Pokemon is healed by 1/8 of its max HP each turn when burned; no Atk loss.",
+      "rating":4,
+      "num":-1002
+   },
+   "soothingsong":{
+      "flags":{
+         
+      },
+      "name":"Soothing Song",
+      "shortDesc":"When this Pokémon uses a sound move, it and its allies heal 12.5% of their max HP."
+   },
+   "sunkissed":{
+      "desc":"This Pokémon's Fairy-type attacks cause the target to become Sunkissed. Fire-type attacks deal 1.5× damage to Sunkissed Pokémon and remove the condition.",
+      "shortDesc":"Fairy attacks Sunkiss the target; Fire attacks: 50% more damage to Sunkissed Pokémon.",
+      "name":"Sunkissed",
+      "rating":3,
+      "num":-56
+   },
+   "lithosynthesis":{
+      "name":"Lithosynthesis",
+      "shortDesc":"Under Sandstorm/Red HP/Booster Energy: Highest stat 1.3x (1.5x if Speed)."
+   },
+   "consumption":{
+      "name":"Consumption",
+      "shortDesc":"Heals 33% HP on KO."
+   },
+   "redsoul":{
+      "name":"Red Soul",
+      "shortDesc":"Attack x1.2; x1.5 if an ally has Blue Soul."
+   },
+   "bluesoul":{
+      "name":"Blue Soul",
+      "shortDesc":"Defense x1.2; x1.5 if an ally has Red Soul."
+   },
+   "flashfreeze":{
+      "name":"Flash Freeze",
+      "rating":3.5,
+      "num":18
+   },
+   "scorching":{
+      "name":"Scorching",
+      "shortDesc":"In sun, this Pokémon's non-Fire moves have 1.3x power."
+   },
+   "magnetic":{
+      "name":"Magnetic",
+      "shortDesc":"This Pokemon draws Steel moves to itself to raise it's Atk by 1; Steel Immunity."
+   },
+   "flicker":{
+      "name":"Flicker",
+      "shortDesc":"Once per battle, this Pokemon dodges any attacking move on it's first active turn."
+   },
+   "aimassist":{
+      "name":"Aim Assist",
+      "shortDesc":"On switch-in, this Pokemon activates the Lock-On effect."
+   },
+   "honeygather":{
+      "name":"Honey Gather",
+      "shortDesc":"If itemless: 50% chance to get Honey; 100% in Misty Terrain. Heals 1/8th max HP if holding Honey. Honey cannot be removed."
+   },
+   "goldengale":{
+      "name":"Golden Gale",
+      "shortDesc":"This Pokemon takes halved damage from wind moves; its own have 1.3x power."
+   },
+   "calamitycore":{
+      "name":"Calamity Core",
+      "shortDesc":"If an opposing Pokémon inflicts a status on this Pokémon, it is cured and adjacent Pokémon lose 1/8 max HP."
+   },
+   "whitegale":{
+      "shortDesc":"Flying moves get +1 priority at full HP or at 50% HP or less.",
+      "flags":{
+         
+      },
+      "name":"White Gale"
+   },
+   "megasol":{
+      "flags":{
+         
+      },
+      "name":"Mega Sol",
+      "rating":3,
+      "num":315,
+      "shortDesc":"This Pokémon can use its moves as if the weather were harsh sunlight."
+   },
+   "absolutezero":{
+      "flags":{
+         
+      },
+      "name":"Absolute Zero",
+      "shortDesc":"On switch-in: Sets Absolute Zero (Snow + -25% Speed + 1/16th chip, except this Pokemon.)",
+      "desc":"On switch-in, the weather becomes Absolute Zero, which includes all the effects of snow, reduces the speed of Pokemon on the field by 25%, and deals 1/16th chip to all Pokemon on the field, sans this Pokemon. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Primordial Sea, Delta Stream, Desolate Land, or Dust Devil abilities."
+   },
+   "aggravation":{
+      "name":"Aggravation",
+      "shortDesc":"When ≤50% HP; +1 ATK."
+   },
+   "airbag":{
+      "name":"Airbag",
+      "shortDesc":"Physical Super-Effective moves deal neutral damage."
+   },
+   "ambush":{
+      "name":"Ambush",
+      "shortDesc":"Slicing moves: +1 priority at full HP, always crit at 1/3 HP or less."
+   },
+   "bewitchingtail":{
+      "name":"Bewitching Tail",
+      "shortDesc":"Targeting drowsy foes: Spe 1.5x | From drowsy foes: 20% Less Damage. | Attacks are critical hits."
+   },
+   "biosynthesis":{
+      "name":"Biosynthesis",
+      "shortDesc":"When Terrain is active: Gains seed boost + secondary type."
+   },
+   "blackflame":{
+      "name":"Black Flame",
+      "shortDesc":"If BRN/DRGB: Drawbacks ignored, Offenses 1.5x."
+   },
+   "blindrage":{
+      "name":"Blind Rage",
+      "shortDesc":"When hit by a Super-Effective attack: Atk & SpA +1."
+   },
+   "bigpecks":{
+      "name":"Big Pecks",
+      "shortDesc":"Holder's Attack is raised by 2 for each of its stats that is lowered by a Foe."
+   },
+   "butterflystar":{
+      "flags":{
+         "failroleplay":1,
+         "noreceiver":1,
+         "noentrain":1,
+         "notrace":1,
+         "failskillswap":1,
+         "cantsuppress":1
+      },
+      "shortDesc":"Bug moves trigger Armored-Form; Flying moves trigger Winged-Form.",
+      "name":"Butterfly Star"
+   },
+   "centrifuge":{
+      "name":"Centrifuge",
+      "shortDesc":"This Pokemon draws Ground moves to itself to raise it's Sp. Atk by 1; Ground Immunity."
+   },
+   "corrosiveclaws":{
+      "name":"Corrosive Claws",
+      "desc":"When this Pokémon brings an opponent to 50% HP or less with an attacking move, it badly poisons that opponent.",
+      "shortDesc":"Targets dropped to ≤50% HP by attacks: Badly Poisoned"
+   },
+   "corruptedpoison":{
+      "name":"Corrupted Poison",
+      "desc":"When this Pokémon hits a foe with a non-resisted Poison-type attack, that foe's corresponding defense is lowered by 1 stage, unless the foe is holding a Covert Cloak.",
+      "shortDesc":"Non-resisted Poison Moves: Lower targets's Def/SpD by -1 (blocked by Covert Cloak)."
+   },
+   "crimsondemon":{
+      "name":"Crimson Demon",
+      "shortDesc":"KO Opponent: 1+ Attack | Dragon Moves: 30% BRN Chance."
+   },
+   "crystalblight":{
+      "name":"Crystalblight",
+      "desc":"At the end of each turn, opposing Pokémon that are paralyzed take 1/16 of their max HP as damage and become Fatigued.",
+      "shortDesc":"Foes w/ PAR: Gain Fatigue & lose 1/16 HP each turn"
+   },
+   "cryofruin":{
+      "name":"Cry of Ruin",
+      "shortDesc":"Enraged foes are trapped and cannot switch."
+   },
+   "debris":{
+      "name":"Debris",
+      "shortDesc":"When hit by a contact move, sets Spikes on the opposing side (max 3 layers)."
+   },
+   "densecortex":{
+      "name":"Dense Cortex",
+      "shortDesc":"Immune to slicing moves."
+   },
+   "destructionstar":{
+      "name":"Destruction Star",
+      "shortDesc":"After KOing a foe: enters Charged-Forme."
+   },
+   "disasterstar":{
+      "name":"Disaster Star",
+      "shortDesc":"After KOing a foe: enters Charged-Forme."
+   },
+   "direspikescales":{
+      "name":"Direspike Scales",
+      "shortDesc":"Dalamadur: If full HP, all damaging hits are treated as not very effective (0.5x)."
+   },
+   "dragoneater":{
+      "name":"Dragon Eater",
+      "shortDesc":"Hit by a Dragon move: Immunity, Heals 25% max HP."
+   },
+   "dragonpoint":{
+      "name":"Dragon Point",
+      "shortDesc":"Using contact moves: 30% chance to inflict Dragonblight on the target."
+   },
+   "dukesbayonet":{
+      "name":"Duke's Bayonet",
+      "shortDesc":"Contact moves: Bypass Protect, deal 50% damage"
+   },
+   "piercingdrill":{
+      "name":"Piercing Drill",
+      "shortDesc":"Contact moves: Bypass Protect, deal 50% damage"
+   },
+   "dulledblades":{
+      "name":"Dulled Blades",
+      "shortDesc":"Slicing moves: +1 Defense"
+   },
+   "dustdevil":{
+      "name":"Dust Devil",
+      "shortDesc":"On switch-in: Sets Dust Devil (Sandstorm + Perfect Rock Accuracy + 1/16 chip, except this Pokemon.)",
+      "desc":"On switch-in, the weather becomes Desolate Land, which includes all the effects of Sandstorm, removes accuracy check for rock moves, and deals 1/16th chip to all Pokemon on the field, sans this Pokemon. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Primordial Sea, Delta Stream, Desolate Land, or Absolute Zero abilities."
+   },
+   "emperorsroar":{
+      "name":"Emperor's Roar",
+      "shortDesc":"KOs give +1 SpA | Dragon moves have a 30% PAR chance."
+   },
+   "empressthrone":{
+      "name":"Empress Throne",
+      "shortDesc":"If Ahtal-Ka, becomes Ahtal-Neset if at 1/2 max HP or less at end of turn."
+   },
+   "escaton":{
+      "name":"Escaton",
+      "shortDesc":"Before using a move: Type changes to match move. Infinite Use."
+   },
+   "ferventscales":{
+      "name":"Fervent Scales",
+      "shortDesc":"This Pokemon takes halved damage from residual sources."
+   },
+   "foolproof":{
+      "name":"Foolproof",
+      "shortDesc":"Soundproof + Bulletproof"
+   },
+   "frostnip":{
+      "name":"Frostnip",
+      "shortDesc":"Against frostbitten foes: Moves have 1.5x power"
+   },
+   "frozencalamity":{
+      "name":"Frozen Calamity",
+      "shortDesc":"This Pokemon resists Ice, 1.5x Offenses when using Ice-type attacks, +5% Ice Power per fainted foe."
+   },
+   "generalist":{
+      "name":"Generalist",
+      "shortDesc":"Non-STAB moves: Power is 1.2x."
+   },
+   "geminicore":{
+      "name":"Gemini Core",
+      "desc":"This Pokémon ignores charging and recharging turns on its moves.",
+      "shortDesc":"Ignores charge and recharge turns.",
+      "flags":{
+         
+      }
+   },
+   "gravedrum":{
+      "name":"Gravedrum",
+      "shortDesc":"Speed is 1.5x if any adjacent foe has BRN/Blast. Attacks are criticial hits."
+   },
+   "heatsink":{
+      "name":"Heat Sink",
+      "shortDesc":"When hit by Fire moves: Immune and heals 25% Max HP."
+   },
+   "howlingthunder":{
+      "name":"Howling Thunder",
+      "desc":"When this Pokémon is under the effect of Charge, its Attack is doubled and its Speed is multiplied by 1.5x.",
+      "shortDesc":"When under Charge: Attack is 2x, Speed is 1.5x"
+   },
+   "icebreaker":{
+      "name":"Ice Breaker",
+      "shortDesc":"Under Snow: Attacks have 1.3x power; Immune to Snow damage.",
+      "flags":{
+         
+      }
+   },
+   "icearmor":{
+      "name":"Ice-Armor",
+      "shortDesc":"Hit by a PHYS. Attack or Under Snow; Transform into Zamtrios-Iced."
+   },
+   "ignite":{
+      "name":"Ignite",
+      "shortDesc":"When using Normal-type moves: Become Fire-type with 1.2x power."
+   },
+   "incandescent":{
+      "name":"Incandescent",
+      "shortDesc":"This Pokemon is immune to Fire Moves; 1.3x offenses when using Fire-type attacks."
+   },
+   "insectarmor":{
+      "name":"Insect Armor",
+      "shortDesc":"This Pokemon has Bug-Type resistances; 1.5x offenses when using Bug-type attacks."
+   },
+   "itembag":{
+      "name":"Itembag",
+      "shortDesc":"End of turn: If no item, this Pokemon gains a random item."
+   },
+   "maddragon":{
+      "name":"Mad Dragon",
+      "shortDesc":"This Pokemon has Dragon-Type resistances; 1.5x offenses when using Dragon-type attacks."
+   },
+   "magmaarmor":{
+      "name":"Magma Armor",
+      "shortDesc":"Holder gains Water Neutrality + FRZ Immunity; Hit by Ice/Water, Defense +1; Hit by Fire, Speed +1"
+   },
+   "merciless":{
+      "name":"Merciless",
+      "shortDesc":"This Pokemon's attacks always crit against statused targets."
+   },
+   "megiddosgift":{
+      "name":"Megiddo's Gift",
+      "shortDesc":"Before using Fire/Water moves: Sets Sunny Day or Rain Dance."
+   },
+   "mountaineer":{
+      "shortDesc":"On switch-in: This pokemon is immune to Rock-type attacks and Stealth Rock.",
+      "flags":{
+         "breakable":1
+      },
+      "name":"Mountaineer",
+      "rating":3,
+      "num":-2
+   },
+   "mightywall":{
+      "name":"Mighty Wall",
+      "shortDesc":"On switch-in: This Pokémon takes 0.5x damage from attacks."
+   },
+   "mucusveil":{
+      "flags":{
+         
+      },
+      "name":"Mucus Veil",
+      "shortDesc":"When hit by contact moves: This Pokemon retaliates with Soak."
+   },
+   "oceanicveil":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Oceanic Veil",
+      "shortDesc":"This Pokemon Heals 1/16 max HP each turn."
+   },
+   "oilmucus":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Oilmucus",
+      "shortDesc":"This Pokemon is healed 1/4 by Fire, 1/8 by Sun; is hurt 1.25x by Water, 1/8 by Rain."
+   },
+   "oilslick":{
+      "flags":{
+         
+      },
+      "name":"Oilslick",
+      "shortDesc":"On switch-in: Lowers the Speed of foes by -1."
+   },
+   "overload":{
+      "name":"Overload",
+      "shortDesc":"When using Dragon-type moves: 1.4x Power; recoil 25% of damage dealt."
+   },
+   "pathogenic":{
+      "name":"Pathogenic",
+      "shortDesc":"Hit by contact moves: Attacker's ability becomes Pathogenic; non-Poison Pokémon lose 1/8 HP per turn."
+   },
+   "perforating":{
+      "name":"Perforating",
+      "shortDesc":"When using Poison moves: Ignore Steel-type immunities."
+   },
+   "permafrost":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Permafrost",
+      "shortDesc":"Targeted by Water-type moves: They become Ice-type | Hit by Ice-type Moves: 1+ Def."
+   },
+   "plow":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Plow",
+      "shortDesc":"Hit by Ground moves: Immunity, Heals 25% HP | Heals from Spikes/Stealth Rock."
+   },
+   "pyredrive":{
+      "flags":{
+         "failroleplay":1,
+         "noreceiver":1,
+         "noentrain":1,
+         "notrace":1,
+         "failskillswap":1,
+         "notransform":1
+      },
+      "name":"Pyre Drive",
+      "shortDesc":"Under Sun/Red HP/Booster Energy: Highest stat 1.3x (1.5x if Speed)."
+   },
+   "chlorosynthesis":{
+      "flags":{
+         "failroleplay":1,
+         "noreceiver":1,
+         "noentrain":1,
+         "notrace":1,
+         "failskillswap":1,
+         "notransform":1
+      },
+      "name":"Chlorosynthesis",
+      "shortDesc":"Under Grassy Terrain/Red HP/Booster Energy: Highest stat 1.3x (1.5x if Speed)."
+   },
+   "puffup":{
+      "name":"Puff-Up",
+      "shortDesc":"Hit by a SPEC. Attack/Under Rain; Transform into Zamtrios-Puffed"
+   },
+   "pungency":{
+      "flags":{
+         
+      },
+      "shortDesc":"Hit by Contact moves: 30% chance of inflicting Stench.",
+      "name":"Pungency"
+   },
+   "ragingrebel":{
+      "flags":{
+         
+      },
+      "name":"Raging Rebel",
+      "shortDesc":"1.3x Atk if it or allies have stat drops. Ignores Atk drops. BRN immune."
+   },
+   "razoredge":{
+      "flags":{
+         
+      },
+      "shortDesc":"Contact moves inflict bleed on the target.",
+      "name":"Razor Edge"
+   },
+   "reactivecore":{
+      "flags":{
+         
+      },
+      "name":"Reactive Core",
+      "shortDesc":"Fire/BRN/Sun: Offenses 1.3x | Ice/FRZ/Snow: Defenses 1.3x"
+   },
+   "reactivetouch":{
+      "name":"Reactive Touch",
+      "shortDesc":"Using a contact move: Has a 30% chance to blast the foe."
+   },
+   "relentless":{
+      "flags":{
+         
+      },
+      "name":"Relentless",
+      "desc":"Damage of moves used on consecutive turns is increased. Max 2x after 5 turns. Does not stack with Metronome.",
+      "shortDesc":"Consecutive move use: Damage rises to 2x after 5 turns; ignores Metronome."
+   },
+   "riptide":{
+      "flags":{
+         
+      },
+      "name":"Riptide",
+      "desc":"If any foe is trapped by a non-damaging move, that foe loses 1/8 of its max HP each turn; this Pokemon heals by the same amount.",
+      "shortDesc":"When a foe is trapped (non-damaging): Foe loses 1/8 HP; This Pokemon heals 1/8th HP."
+   },
+   "risenburst":{
+      "flags":{
+         
+      },
+      "name":"Risen Burst",
+      "desc":"On Mega Evolution, this Pokemon immediately uses Risen Burst (60 BP, Typeless). This Pokemon resists Dark Moves and own are boosted by 1.3x. When hit by a Dark-type attack, this Pokemon retaliates with Risen Burst.",
+      "shortDesc":"On Mega-Evo/Hit by Dark Attack: Uses Risen Burst (60 BP, Typeless). | Dark Moves are 1.3x + Dark Resistance."
+   },
+   "rivalry":{
+      "name":"Rivalry",
+      "shortDesc":"This Pokemon's moves deal 1.33x damage to targets that share a type with it."
+   },
+   "rustedgale":{
+      "flags":{
+         
+      },
+      "name":"Rusted Gale",
+      "shortDesc":"Summons Ruststorm. Steel-Type resistances are removed, Non-Steel has 0.75x Def."
+   },
+   "sacredjewel":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Sacred Jewel",
+      "shortDesc":"Non-Volatile Status Inflicted: Sp. Def is 1.5x."
+   },
+   "shellarmor":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Shell Armor",
+      "shortDesc":"Immune to crits; takes 20% less damage from all attacks."
+   },
+   "silversubsume":{
+      "name":"Silver Subsume",
+      "shortDesc":"When targeted by a hazard move: It fails, Attack is raised by 1+."
+   },
+   "snowseethe":{
+      "flags":{
+         
+      },
+      "name":"Snow Seethe",
+      "shortDesc":"Under Snow: Atk is 1.5x, loses 1/8 max HP per turn."
+   },
+   "solarcore":{
+      "flags":{
+         
+      },
+      "name":"Solar Core",
+      "shortDesc":"Under Sun: Skip charging turn of it's own moves."
+   },
+   "solarwrath":{
+      "flags":{
+         
+      },
+      "name":"Solar Wrath",
+      "shortDesc":"Under Sun: Atk is 1.5x, loses 1/8 max HP per turn."
+   },
+   "sinistergrudge":{
+      "name":"Sinister Grudge",
+      "shortDesc":"This Pokemon's moves have 5% more power for each fainted ally, max 25%."
+   },
+   "spongy":{
+      "flags":{
+         "breakable":1
+      },
+      "shortDesc":"Takes 1/2x damage from special moves | 2x damage from Fire moves.",
+      "name":"Spongy"
+   },
+   "starvingbite":{
+      "flags":{
+         
+      },
+      "name":"Starving Bite",
+      "desc":"This Pokémon's biting attacks ignore target abilities and type immunities, but still respect resistances and weaknesses.",
+      "shortDesc":"Biting attacks ignore immunities and abilities."
+   },
+   "stealthsilver":{
+      "flags":{
+         
+      },
+      "shortDesc":"On activation: Sets steel-type hazards.",
+      "name":"Stealth Silver"
+   },
+   "strafe":{
+      "flags":{
+         
+      },
+      "name":"Strafe",
+      "desc":"When this Pokémon takes damage, 20% of its Speed stat is added to its Defense and Special Defense.",
+      "shortDesc":"When taking damage: 20% of Speed is added to defenses."
+   },
+   "swampsneeze":{
+      "name":"Swamp Sneeze",
+      "shortDesc":"On switch-in, summons Water Sport and Mud Sport."
+   },
+   "tempestenergy":{
+      "flags":{
+         
+      },
+      "desc":"This Pokemon is immune to wind moves and raises its Sp.Attack by 1 stage when hit by a wind move, when Tailwind begins on this Pokemon's side, or when Sandstorm is active. Sandstorm immunity.",
+      "shortDesc":"Hit by Wind Move/Sandstorm: Immunity, +1 SpA | Under Tailwind: +1 SpA.",
+      "name":"Tempest Energy"
+   },
+   "tempestforce":{
+      "flags":{
+         
+      },
+      "desc":"This Pokemon is immune to wind moves and raises its Attack by 1 stage when hit by a wind move, when Tailwind begins on this Pokemon's side, or when Sandstorm is active. Sandstorm immunity.",
+      "shortDesc":"Hit by Wind Move/Sandstorm: Immunity, +1 Atk | Under Tailwind: +1 Atk.",
+      "name":"Tempest Force"
+   },
+   "terrestrial":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Terrestrial",
+      "shortDesc":"This Pokemon takes halved damage from Ground-type attacks, +1 Defense from Hazards."
+   },
+   "thunderstorm":{
+      "flags":{
+         
+      },
+      "name":"Thunderstorm",
+      "shortDesc":"After using a Flying-Type Move: Gain Charge Effect."
+   },
+   "twilightdust":{
+      "flags":{
+         "failroleplay":1,
+         "noreceiver":1,
+         "noentrain":1,
+         "notrace":1,
+         "failskillswap":1
+      },
+      "name":"Twilight Dust",
+      "desc":"If this Pokemon is a Nightcloak Malfestio and induces drowsy in a target, the target also becomes confused.",
+      "shortDesc":"Nightcloak: If this Pokemon induces drowsy in a Foe; Foe also becomes confused."
+   },
+   "vampirism":{
+      "flags":{
+         
+      },
+      "name":"Vampirism",
+      "shortDesc":"When using contact moves: Replaces target's ability with Vampirism."
+   },
+   "watercompaction":{
+      "flags":{
+         "breakable":1
+      },
+      "name":"Water Compaction",
+      "desc":"This Pokemon is immune to Water-type moves and raises its Def by 2 stages when hit by an Water-type move.",
+      "shortDesc":"When hit by a Water move: Immunity, Raises Def. by +2."
+   },
+   "wylkencasing":{
+      "flags":{
+         "failroleplay":1,
+         "noreceiver":1,
+         "noentrain":1,
+         "notrace":1,
+         "failskillswap":1,
+         "cantsuppress":1
+      },
+      "name":"Wylk Encasing",
+      "desc":"If this Pokemon is a Zoh Shia, it changes to it's Unencased form if it has 1/2 or less of its maximum HP, and changes to Encased Form if it has more than 1/2 its maximum HP. This check is done on switch-in and at the end of each turn. While in its Encased Form, it cannot become affected by a non-volatile status condition or Yawn.",
+      "shortDesc":"Zoh Shia: Starts Encased, becomes Unencased at the end of the turn if at ≤50% Max HP."
+   },
+   "wyversion":{
+      "flags":{
+         
+      },
+      "name":"Wyversion",
+      "shortDesc":"Hit/BRN/FRZ/PARA: Cures + Gains Dragon-Charge | Status Immune if Charged."
+   }
+}

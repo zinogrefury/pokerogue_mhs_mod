@@ -1,0 +1,15 @@
+1: add the following lines to the bottom of the .ts file; make sure to replace the object name:
+const jsonString = JSON.stringify(<object name at start>);
+console.log(jsonString);
+
+2: change the object type in the function definition (ModdednameData or LearnsetData) to object
+
+3: go to https://www.typescriptlang.org/play/ and copy paste the ts code in
+
+4: in the TS Config dropdown, change the module to CommonJS
+
+5: run and copy the output to a .json file
+
+6: remove the quotes at the start and end, since it's a string
+
+I'm sure there's a more elegant way to do this but I'm lazy n don't wanna have to create an env just to run these lmao
