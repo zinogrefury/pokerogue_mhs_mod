@@ -1,0 +1,8 @@
+# pandas - dataframes to organize data into tables and import json
+py -m pip install pandas
+
+# openpyxl - export/import Excel files into pandas
+py -m pip install openpyxl
+
+# pillow - image manipulation; only used to flip sprites for a makeshift back sprite
+py -m pip install pillow
