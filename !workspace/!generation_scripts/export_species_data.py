@@ -71,7 +71,7 @@ for i, mon in mon_df.iterrows():
     # species
     species_txt += "  generationMonhunSpeciesData[SpeciesId." + mon['id'] + "] = {\n    species: new PokemonSpecies({\n"
     species_txt += "      id: SpeciesId." + mon['id'] + ",\n"
-    species_txt += "      generation: " + str(mon['gen']) + ",\n"
+    species_txt += "      generation: " + str(int(mon['gen'])) + ",\n"
     species_txt += "      category: \"" + mon['category'] + "\",\n"
     species_txt += "      type1: PokemonType." + mon['type1'].upper() + ",\n"
     species_txt += "      type2: PokemonType." + ("null" if pd.isnull(mon['type2']) else mon['type2'].upper()) + ",\n"
@@ -101,7 +101,7 @@ for i, mon in mon_df.iterrows():
     species_txt += "    passives: AbilityId." + mon_abil_p + ",\n"
 
     # egg moves
-    eggmoves_txt += "  [SpeciesId." + mon['id'] + "]: [ MoveId." + mon['eggmove1'] + ", MoveId." + mon['eggmove2'] + ", MoveId." + mon['eggmove3'] + ", MoveId." + mon['eggmove4'] + " ],\n"
+    eggmoves_txt += "  [SpeciesId." + mon['id'] + "]: [MoveId." + mon['eggmove1'] + ", MoveId." + mon['eggmove2'] + ", MoveId." + mon['eggmove3'] + ", MoveId." + mon['eggmove4'] + " ],\n"
 
     # species enums
     enum_txt += "  " + mon['id'] + " = " + str(int(mon['dex_num'] + 1500)) + ",\n"
