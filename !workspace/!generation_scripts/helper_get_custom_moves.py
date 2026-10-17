@@ -22,8 +22,8 @@ abils_json['index'] = range(len(abils_json))
 abils_json.set_index('index', inplace=True)
 
 # import mons and their movesets for joining
-mon_df = pd.read_excel('./output/pokedex_raw.xlsx')
-move_df = pd.read_excel('./output/movesets_raw.xlsx')
+mon_df = pd.read_excel('./worksheets/pokedex_raw.xlsx')
+move_df = pd.read_excel('./worksheets/movesets_raw.xlsx')
 
 #print(moves_json)
 
@@ -77,7 +77,7 @@ abils_export = abils_export[['Ability Name', 'ID', 'name', 'Description']]  # re
 
 # sort and export both
 moves_export.sort_values(by=["Type", "Category", "Power", "Accuracy", "Move Name"], inplace=True)
-moves_export.to_excel('./output/custom_moves.xlsx', index=False)
+moves_export.to_excel('./worksheets/custom_moves.xlsx', index=False)
 
 abils_export.sort_values(by=["Ability Name"], inplace=True)
-abils_export.to_excel('./output/custom_abils.xlsx', index=False)
+abils_export.to_excel('./worksheets/custom_abils.xlsx', index=False)

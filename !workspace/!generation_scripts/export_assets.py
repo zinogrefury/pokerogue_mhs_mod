@@ -90,7 +90,7 @@ def export_sprite(sprite_outpath, sprite_out_name, sprite_in_name, mon_name, is_
             shutil.copy(sprite_in_dir + "icons/fallback.png", sprite_outpath + sprite_out_name + ".png")
 
 # import mons and movelists
-mon_df = pd.read_excel('./output/pokedex.xlsx')
+mon_df = pd.read_excel('./worksheets/pokedex.xlsx')
 # delete existing colors before appending
 if os.path.isfile("../!!output/assets/starter-colors.json.add"): os.remove("../!!output/assets/starter-colors.json.add")
 

@@ -40,8 +40,8 @@ locale_categories_txt = ""
 
 
 # import mons and movelists
-mon_df = pd.read_excel('./output/pokedex.xlsx')
-move_df = pd.read_excel('./output/movesets.xlsx')
+mon_df = pd.read_excel('./worksheets/pokedex.xlsx')
+move_df = pd.read_excel('./worksheets/movesets.xlsx')
 
 # filter pokedex to only enabled mons and only if all the relevant fields are filled
 mon_df = mon_df[mon_df['enabled'] == 'y']

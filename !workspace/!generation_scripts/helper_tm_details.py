@@ -8,4 +8,4 @@ tm_df['tm_id'] = tm_df['tm_id'].str.replace('_','')
 
 tm_details = tm_df.join(move_df.set_index('Simple Move Name'), on='tm_id')
 
-tm_details.to_excel('./output/tm_details.xlsx', index=False)
+tm_details.to_excel('./worksheets/tm_details.xlsx', index=False)

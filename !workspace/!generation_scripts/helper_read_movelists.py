@@ -35,11 +35,11 @@ for mon_name, row in moves_json.iterrows():
 moves_export = pd.DataFrame.from_dict(moves_dict).transpose()
 
 # export raw dataframe to Excel
-moves_export.to_excel('./output/movesets_raw.xlsx', index=False)
+moves_export.to_excel('./worksheets/movesets_raw.xlsx', index=False)
 
 ### prep for editable list
 # import monster list to restrict to just active mons
-mon_df = pd.read_excel('./output/pokedex.xlsx')
+mon_df = pd.read_excel('./worksheets/pokedex.xlsx')
 mon_df_filtered = mon_df[mon_df['enabled'] == 'y']  # filter to only enabled mons
 
 mon_df_filtered['ID_TRUNC'] = mon_df_filtered['ID'].replace('_', '', regex=True)
@@ -75,4 +75,4 @@ moves_export = moves_export.drop('move_id', axis=1)
 
 # sort list and export to template file
 moves_export.sort_values(by=['dex_num', 'level', 'move'], inplace=True)
-moves_export.to_excel('./output/movesets_template.xlsx', index=False)
+moves_export.to_excel('./worksheets/movesets_template.xlsx', index=False)

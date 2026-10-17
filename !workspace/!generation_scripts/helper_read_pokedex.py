@@ -49,7 +49,7 @@ for i, row in dex_json.iterrows():
 dex_export = pd.DataFrame.from_dict(dex_dict).transpose()
 
 # export raw dataframe to Excel
-dex_export.to_excel('./output/pokedex_raw.xlsx', index=False)
+dex_export.to_excel('./worksheets/pokedex_raw.xlsx', index=False)
 
 # add empty columns to dataframe to create template for editing
 dex_export.insert(loc=15, column='eggmove4', value=None)
@@ -73,4 +73,4 @@ dex_export['candyColor1'] = 'DDDDDD'
 dex_export['candyColor2'] = '222222'
 
 # export templated dataframe
-dex_export.to_excel('./output/pokedex_template.xlsx', index=False)
+dex_export.to_excel('./worksheets/pokedex_template.xlsx', index=False)
