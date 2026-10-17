@@ -2,7 +2,7 @@
 Mod for PokeRogue that adds Monster Hunter monsters as catchable pokemon. Based on the Monster Hunter Showdown project
 
 ## Installation
-1: Install the PokeRogue Git repository locally to your computer - refer to CONTRIBUTING.md for installation instructions there: https://github.com/pagefaultgames/pokerogue/blob/beta/CONTRIBUTING.md
+1: Install the PokeRogue Git repository locally to your computer - refer to CONTRIBUTING.md for installation instructions there: https://github.com/pagefaultgames/pokerogue/blob/main/CONTRIBUTING.md
 
 2: Copy the assets, locales and src folder into the directory you downloaded the PokeRogue repository into
 
