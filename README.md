@@ -8,3 +8,4 @@ Mod for PokeRogue that adds Monster Hunter monsters as catchable pokemon. Based 
 
 ## Contribution
 All assets, data sheets and scripts to help format and generate the output files are located in the !workspace folder
+Balancing and movelists are managed via Google Sheets - the workbook can be found here: https://docs.google.com/spreadsheets/d/19yGFfFgpnIKd8CUjuscHEFfatxzM5KPcPy2hez29P7Y/edit?usp=sharing
