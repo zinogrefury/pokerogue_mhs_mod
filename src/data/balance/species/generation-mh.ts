@@ -25,7 +25,7 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
   generationMonhunSpeciesData[SpeciesId.RATHIAN] = {
     species: new PokemonSpecies({
       id: SpeciesId.RATHIAN,
-      generation: 1.0,
+      generation: 1,
       category: "Fire Wyvern Queen",
       type1: PokemonType.GROUND,
       type2: PokemonType.POISON,
@@ -172,7 +172,7 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
   generationMonhunSpeciesData[SpeciesId.RATHALOS] = {
     species: new PokemonSpecies({
       id: SpeciesId.RATHALOS,
-      generation: 1.0,
+      generation: 1,
       category: "Fire Wyvern King",
       type1: PokemonType.FIRE,
       type2: PokemonType.FLYING,
@@ -314,7 +314,7 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
   generationMonhunSpeciesData[SpeciesId.PALICO] = {
     species: new PokemonSpecies({
       id: SpeciesId.PALICO,
-      generation: 1.0,
+      generation: 1,
       category: "Helper Felyne",
       type1: PokemonType.NORMAL,
       type2: PokemonType.null,
@@ -333,7 +333,7 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
       catchRate: 235.0,
       baseFriendship: 50,
       baseExp: 55.0,
-      growthRate: GrowthRate.MEDIUM_SLOW,
+      growthRate: GrowthRate.FAST,
       malePercent: 50,
       genderDiffs: false,
     }),
@@ -422,7 +422,7 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
   generationMonhunSpeciesData[SpeciesId.ZINOGRE] = {
     species: new PokemonSpecies({
       id: SpeciesId.ZINOGRE,
-      generation: 3.0,
+      generation: 3,
       category: "Thunder Wolf Wyvern",
       type1: PokemonType.ELECTRIC,
       type2: PokemonType.NORMAL,
@@ -480,9 +480,9 @@ export function initGenerationMonhun(): SpeciesDataMapConfig {
       [RELEARN_MOVE, MoveId.MIMIC],
       [RELEARN_MOVE, MoveId.NOBLE_ROAR],
       [RELEARN_MOVE, MoveId.PARABOLIC_CHARGE],
+      [RELEARN_MOVE, MoveId.THUNDERCLAP],
       [RELEARN_MOVE, MoveId.THUNDER_CAGE],
       [RELEARN_MOVE, MoveId.THUNDER_FANG],
-      [RELEARN_MOVE, MoveId.THUNDERCLAP],
       [RELEARN_MOVE, MoveId.VOLT_TACKLE],
     ],
     tms: [

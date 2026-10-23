@@ -169,7 +169,7 @@ def add_to_icon_sheet(sheet_outpath, icon_name, mon_name, icon_index, og_sheet_s
     icon_sheet.save(sheet_outpath + '.png')
 
     # add text block to .json definition
-    icon_json = open(sheet_outpath + '_add.json', 'a')
+    icon_json = open(sheet_outpath + '.json.add', 'a')
     icon_json.write(icons_json(icon_name, str(icon_h), str(icon_w), str(icon_x), str(icon_y)))
     icon_json.close()
 
@@ -204,8 +204,8 @@ for i, mon in mon_df.iterrows():
 for gen in mons_in_each_gen.keys():
     icon_sheet_shapes[str(gen)] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + '.png', '../pokerogue icon sheets/pokemon_icons_' + str(gen) + '.png', mons_in_each_gen[gen] * 2)
     icon_sheet_shapes[str(gen) + 'v'] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + 'v.png', '../pokerogue icon sheets/pokemon_icons_' + str(gen) + 'v.png', mons_in_each_gen[gen] * 2)
-    icon_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + "_add.json", "w", encoding="utf-8")
-    icon_v_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + "v_add.json", "w", encoding="utf-8")
+    icon_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + ".json.add", "w", encoding="utf-8")
+    icon_v_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + "v.json.add", "w", encoding="utf-8")
 
 # iterate each mon to handle their sprites and audio
 for i, mon in mon_df.iterrows():

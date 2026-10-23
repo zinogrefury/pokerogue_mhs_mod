@@ -46,11 +46,12 @@ move_df = pd.read_excel('./worksheets/movesets.xlsx')
 # filter pokedex to only enabled mons and only if all the relevant fields are filled
 mon_df = mon_df[mon_df['enabled'] == 'y']
 mon_df = mon_df[~mon_df['dex_num'].isnull()]
-mon_df = mon_df[~mon_df['abilp'].isnull()]
-mon_df = mon_df[~mon_df['eggmove1'].isnull()]
-mon_df = mon_df[~mon_df['eggmove2'].isnull()]
-mon_df = mon_df[~mon_df['eggmove3'].isnull()]
-mon_df = mon_df[~mon_df['eggmove4'].isnull()]
+mon_df = mon_df[~mon_df['Passive Ability'].isnull()]
+mon_df = mon_df[~mon_df['Egg Move 1'].isnull()]
+mon_df = mon_df[~mon_df['Egg Move 2'].isnull()]
+mon_df = mon_df[~mon_df['Egg Move 3'].isnull()]
+mon_df = mon_df[~mon_df['Egg Move 4 (rare)'].isnull()]
+mon_df = mon_df[~mon_df['starterCost'].isnull()]
 
 # filter movelist to only implemented moves
 move_df = move_df[move_df['is_implemented'] == 'y']
@@ -62,17 +63,17 @@ tm_move_df = move_df[move_df['is_tm'] == 'y'].sort_values('move')
 # iterate each mon to fill out the data struct
 for i, mon in mon_df.iterrows():
     # prepare format for certain fields such as abilities
-    mon_abil_1 = str(mon['abil1']).upper().replace(' ', '_').replace('-', '_')
-    mon_abil_2 = "NONE" if pd.isnull(mon['abil2']) else str(mon['abil2']).upper().replace(' ', '_').replace('-', '_')
-    mon_abil_h = "NONE" if pd.isnull(mon['abilh']) else str(mon['abilh']).upper().replace(' ', '_').replace('-', '_')
-    mon_abil_p = str(mon['abilp']).upper().replace(' ', '_').replace('-', '_')
+    mon_abil_1 = str(mon['Ability 1']).upper().replace(' ', '_').replace('-', '_')
+    mon_abil_2 = "NONE" if pd.isnull(mon['Ability 2']) else str(mon['Ability 2']).upper().replace(' ', '_').replace('-', '_')
+    mon_abil_h = "NONE" if pd.isnull(mon['Hidden Ability']) else str(mon['Hidden Ability']).upper().replace(' ', '_').replace('-', '_')
+    mon_abil_p = str(mon['Passive Ability']).upper().replace(' ', '_').replace('-', '_')
 
     # fill out non-iterated values for the mon
     # species
-    species_txt += "  generationMonhunSpeciesData[SpeciesId." + mon['id'] + "] = {\n    species: new PokemonSpecies({\n"
-    species_txt += "      id: SpeciesId." + mon['id'] + ",\n"
+    species_txt += "  generationMonhunSpeciesData[SpeciesId." + mon['ID'] + "] = {\n    species: new PokemonSpecies({\n"
+    species_txt += "      id: SpeciesId." + mon['ID'] + ",\n"
     species_txt += "      generation: " + str(int(mon['gen'])) + ",\n"
-    species_txt += "      category: \"" + mon['category'] + "\",\n"
+    species_txt += "      category: \"" + mon['Description'] + "\",\n"
     species_txt += "      type1: PokemonType." + mon['type1'].upper() + ",\n"
     species_txt += "      type2: PokemonType." + ("null" if pd.isnull(mon['type2']) else mon['type2'].upper()) + ",\n"
     species_txt += "      height: " + str(mon['height']) + ",\n"
@@ -94,32 +95,32 @@ for i, mon in mon_df.iterrows():
     species_txt += "      malePercent: " + str(mon['malePercent']) + ",\n"
     species_txt += "      genderDiffs: false,\n"
     species_txt += "    }),\n"
-    species_txt += "    starter: SpeciesId." + mon['id'] + ",\n"
+    species_txt += "    starter: SpeciesId." + mon['ID'] + ",\n"
     species_txt += "    starterCost: " + str(mon['starterCost']) + ",\n"
     species_txt += "    evolutions: [],\n"
     species_txt += "    eggTier: EggTier." + mon['eggTier'] + ",\n"
     species_txt += "    passives: AbilityId." + mon_abil_p + ",\n"
 
     # egg moves
-    eggmoves_txt += "  [SpeciesId." + mon['id'] + "]: [MoveId." + mon['eggmove1'] + ", MoveId." + mon['eggmove2'] + ", MoveId." + mon['eggmove3'] + ", MoveId." + mon['eggmove4'] + " ],\n"
+    eggmoves_txt += "  [SpeciesId." + mon['ID'] + "]: [MoveId." + mon['Egg Move 1'] + ", MoveId." + mon['Egg Move 2'] + ", MoveId." + mon['Egg Move 3'] + ", MoveId." + mon['Egg Move 4 (rare)'] + " ],\n"
 
     # species enums
-    enum_txt += "  " + mon['id'] + " = " + str(int(mon['dex_num'] + 1500)) + ",\n"
+    enum_txt += "  " + mon['ID'] + " = " + str(int(mon['dex_num'] + 1500)) + ",\n"
 
     # species locale
-    locale_mons_txt += "  \"" + camelcase(mon['id']) + "\": \"" + mon['name'] + "\",\n"
+    locale_mons_txt += "  \"" + camelcase(mon['ID']) + "\": \"" + mon['Mon Name'] + "\",\n"
     
     # caterogy locale
-    locale_categories_txt += "  \"" + camelcase(mon['id']) + "Category\": \"" + mon['category'] + "\",\n"
+    locale_categories_txt += "  \"" + camelcase(mon['ID']) + "Category\": \"" + mon['Description'] + "\",\n"
 
     # iterate movelists to fill out levelup and tm moves
     species_txt += "    levelMoves: [\n"
-    for j, move in level_move_df[level_move_df['mon'] == mon['id']].iterrows():
+    for j, move in level_move_df[level_move_df['ID'] == mon['ID']].iterrows():
         species_txt += "      [" + str(move['level']) + ", MoveId." + move['move'] + "],\n"
     species_txt += "    ],\n"
     
     species_txt += "    tms: [\n"
-    for j, move in tm_move_df[tm_move_df['mon'] == mon['id']].iterrows():
+    for j, move in tm_move_df[tm_move_df['ID'] == mon['ID']].iterrows():
         species_txt += "      MoveId." + move['move'] + ",\n"
     species_txt += "    ],\n"
     species_txt += "  };\n"
