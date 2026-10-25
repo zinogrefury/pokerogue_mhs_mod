@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import shutil
 import math
+import json
 from PIL import Image as img
 
 showdown_dir = "../raw showdown files/monsterhunter/"
@@ -59,28 +60,28 @@ def sprite_json(spritename, h, w):
 
 # helper function to format part of .json file for icons
 def icons_json(spritename, h, w, x, y):
-    return """				{
-					"filename": \"""" + spritename + """\",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": """ + w + """,
-						"h": """ + h + """
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": """ + w + """,
-						"h": """ + h + """
-					},
-					"frame": {
-						"x": """ + x + """,
-						"y": """ + y + """,
-						"w": """ + w + """,
-						"h": """ + h + """
-					}
-				},
-"""
+    json = {
+        "filename": spritename,
+        "rotated": False,
+        "trimmed": False,
+        "sourceSize": {
+            "w": int(w),
+            "h": int(h)
+        },
+        "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": int(w),
+                "h": int(h)
+        },
+        "frame": {
+                "x": int(x),
+                "y": int(y),
+                "w": int(w),
+                "h": int(h)
+        }
+    }
+    return json
 
 # helper functions to copy sprites by filepath
 def export_sprite(sprite_outpath, sprite_out_name, sprite_in_name, mon_name, is_icon=False, is_back=False, variant_suffix=None):
@@ -169,9 +170,22 @@ def add_to_icon_sheet(sheet_outpath, icon_name, mon_name, icon_index, og_sheet_s
     icon_sheet.save(sheet_outpath + '.png')
 
     # add text block to .json definition
-    icon_json = open(sheet_outpath + '.json.add', 'a')
-    icon_json.write(icons_json(icon_name, str(icon_h), str(icon_w), str(icon_x), str(icon_y)))
-    icon_json.close()
+    # open json file and navigate to where icons are being added
+    icon_json_file = open(sheet_outpath + '.json', 'r')
+    icon_json = json.load(icon_json_file)
+    icon_json_file.close()
+    icon_sheet_list = icon_json['textures'][0]['frames']
+
+    # append formatted json and save the file
+    #print(icons_json(icon_name, str(icon_h), str(icon_w), str(icon_x), str(icon_y)))
+    icon_sheet_list.append(icons_json(icon_name, str(icon_h), str(icon_w), str(icon_x), str(icon_y)))
+
+    icon_json_file = open(sheet_outpath + '.json', 'w')
+    json.dump(icon_json, icon_json_file, indent = 4, ensure_ascii=False)
+    icon_json_file.close()
+    
+    #icon_json.write(icons_json(icon_name, str(icon_h), str(icon_w), str(icon_x), str(icon_y)))
+    #icon_json.close()
 
 # import mons and movelists
 mon_df = pd.read_excel('./worksheets/pokedex.xlsx')
@@ -189,6 +203,7 @@ mon_df = mon_df[~mon_df['Egg Move 3'].isnull()]
 mon_df = mon_df[~mon_df['Egg Move 4 (rare)'].isnull()]
 
 # initialize parameters for icon sheets
+shutil.copy('../pokerogue assets/starter-colors.json', '../!!output/assets/starter-colors.json')
 mons_in_each_gen = {}
 icon_sheet_shapes = {}
 gen_icon_index = {}
@@ -202,10 +217,12 @@ for i, mon in mon_df.iterrows():
 
 # initialize icon sheets and their .json
 for gen in mons_in_each_gen.keys():
-    icon_sheet_shapes[str(gen)] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + '.png', '../pokerogue icon sheets/pokemon_icons_' + str(gen) + '.png', mons_in_each_gen[gen] * 2)
-    icon_sheet_shapes[str(gen) + 'v'] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + 'v.png', '../pokerogue icon sheets/pokemon_icons_' + str(gen) + 'v.png', mons_in_each_gen[gen] * 2)
-    icon_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + ".json.add", "w", encoding="utf-8")
-    icon_v_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + "v.json.add", "w", encoding="utf-8")
+    icon_sheet_shapes[str(gen)] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + '.png', '../pokerogue assets/pokemon_icons_' + str(gen) + '.png', mons_in_each_gen[gen] * 2)
+    icon_sheet_shapes[str(gen) + 'v'] = init_icon_sheet(icon_out_dir + 'pokemon_icons_' + str(gen) + 'v.png', '../pokerogue assets/pokemon_icons_' + str(gen) + 'v.png', mons_in_each_gen[gen] * 2)
+    shutil.copy('../pokerogue assets/pokemon_icons_' + str(gen) + '.json', icon_out_dir + 'pokemon_icons_' + str(gen) + ".json")
+    shutil.copy('../pokerogue assets/pokemon_icons_' + str(gen) + 'v.json', icon_out_dir + 'pokemon_icons_' + str(gen) + "v.json")
+    #icon_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + ".json.add", "w", encoding="utf-8")
+    #icon_v_json = open(icon_out_dir + 'pokemon_icons_' + str(gen) + "v.json.add", "w", encoding="utf-8")
 
 # iterate each mon to handle their sprites and audio
 for i, mon in mon_df.iterrows():
@@ -255,7 +272,16 @@ for i, mon in mon_df.iterrows():
     add_to_icon_sheet(icon_outpath + 'v', dex_num + '_3', mon_lower, gen_icon_index[gen], icon_sheet_shapes[gen + 'v']) # variant 3
     gen_icon_index[gen] += 1
 
-    # create candy colors
-    with open("../!!output/assets/starter-colors.json.add", "a", encoding="utf-8") as candy_colors:
-        candy_colors.write("\"" + dex_num + "\":[\"" + mon['candyColor1'] + "\",\"" + mon['candyColor2'] + "\"],")
+    # add candy colors
+    candy_colors_file = open('../!!output/assets/starter-colors.json', 'r')
+    candy_colors = json.load(candy_colors_file)
+    candy_colors_file.close()
+    
+    candy_colors[dex_num] = [str(mon['candyColor1']), str(mon['candyColor2'])]
+    
+    candy_colors_file = open('../!!output/assets/starter-colors.json', 'w')
+    json.dump(candy_colors, candy_colors_file)
+    candy_colors_file.close()
+    #with open("../!!output/assets/starter-colors.json.add", "a", encoding="utf-8") as candy_colors:
+    #    candy_colors.write("\"" + dex_num + "\":[\"" + str(mon['candyColor1']) + "\",\"" + str(mon['candyColor2']) + "\"],")
 

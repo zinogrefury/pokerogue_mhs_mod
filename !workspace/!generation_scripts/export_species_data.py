@@ -1,11 +1,25 @@
 ### create a file adding monhun mons by formatting mon and movelist data into a file
 import pandas as pd
+import shutil
+import json
 
 # helper function to convert string to camelCase
 def camelcase(text):
     temp = text.replace('_', ' ').replace('-', ' ').title().replace(' ', '')
     res = temp[0].lower() + temp[1:]
     return res
+
+# helper function to write to the locale .json files
+def write_to_json(filepath, key, val):
+    json_file = open(filepath, 'r')
+    json_obj = json.load(json_file)
+    json_file.close()
+    
+    json_obj[key] = val
+    
+    json_file = open(filepath, 'w')
+    json.dump(json_obj, json_file, indent = 4, ensure_ascii=False)
+    json_file.close()
 
 # initialize master strings - will contain the files and important text to replace
 species_txt = """import { EVOLVE_MOVE, RELEARN_MOVE } from "#app/constants";
@@ -38,6 +52,9 @@ enum_txt = ""
 locale_mons_txt = ""
 locale_categories_txt = ""
 
+# initialize locale .jsons
+shutil.copy('../pokerogue assets/locales/pokemon.json', '../!!output/locales/en/pokemon.json')
+shutil.copy('../pokerogue assets/locales/pokemon-category.json', '../!!output/locales/en/pokemon-category.json')
 
 # import mons and movelists
 mon_df = pd.read_excel('./worksheets/pokedex.xlsx')
@@ -108,10 +125,12 @@ for i, mon in mon_df.iterrows():
     enum_txt += "  " + mon['ID'] + " = " + str(int(mon['dex_num'] + 1500)) + ",\n"
 
     # species locale
-    locale_mons_txt += "  \"" + camelcase(mon['ID']) + "\": \"" + mon['Mon Name'] + "\",\n"
+    write_to_json('../!!output/locales/en/pokemon.json', camelcase(mon['ID']), mon['Mon Name'])
+    #locale_mons_txt += "  \"" + camelcase(mon['ID']) + "\": \"" + mon['Mon Name'] + "\",\n"
     
     # caterogy locale
-    locale_categories_txt += "  \"" + camelcase(mon['ID']) + "Category\": \"" + mon['Description'] + "\",\n"
+    write_to_json('../!!output/locales/en/pokemon-category.json', camelcase(mon['ID']), mon['Description'])
+    #locale_categories_txt += "  \"" + camelcase(mon['ID']) + "Category\": \"" + mon['Description'] + "\",\n"
 
     # iterate movelists to fill out levelup and tm moves
     species_txt += "    levelMoves: [\n"
@@ -141,8 +160,8 @@ with open("../!!output/src/data/balance/moves/egg-moves.ts.add", "w", encoding="
 with open("../!!output/src/enums/species-id.ts.add", "w", encoding="utf-8") as f:
     f.write(enum_txt)
 
-with open("../!!output/locales/en/pokemon.json.add", "w", encoding="utf-8") as f:
-    f.write(locale_mons_txt)
+#with open("../!!output/locales/en/pokemon.json.add", "w", encoding="utf-8") as f:
+#    f.write(locale_mons_txt)
 
-with open("../!!output/locales/en/pokemon-category.json.add", "w", encoding="utf-8") as f:
-    f.write(locale_categories_txt)
+#with open("../!!output/locales/en/pokemon-category.json.add", "w", encoding="utf-8") as f:
+#    f.write(locale_categories_txt)
